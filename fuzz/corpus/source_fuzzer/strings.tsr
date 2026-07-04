@@ -1,0 +1,8 @@
+let parts = ["tes", "ser", "a"];
+let s = "";
+let i = 0;
+while (i < len(parts)) {
+  s = s ++ parts[i];
+  i = i + 1;
+}
+return upper(s) ++ " v" ++ str(4);

@@ -1,0 +1,36 @@
+[package]
+name = "tessera-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = { path = "libfuzzer-sys" }
+
+[dependencies.tessera]
+path = ".."
+
+# Keep the harness crate outside the parent package workspace. The
+# ClusterFuzzLite build invokes this manifest directly.
+[workspace]
+
+[profile.release]
+debug = 1
+overflow-checks = true
+
+[[bin]]
+name = "module_fuzzer"
+path = "fuzz_targets/module_fuzzer.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "source_fuzzer"
+path = "fuzz_targets/source_fuzzer.rs"
+test = false
+doc = false
+bench = false

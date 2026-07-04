@@ -1,0 +1,34 @@
+[package]
+name = "tessera"
+version = "0.4.2"
+edition = "2021"
+rust-version = "1.70"
+description = "Tessera: a compact embeddable scripting language with a binary bytecode module format and a register virtual machine"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+keywords = ["scripting", "bytecode", "interpreter", "vm", "language"]
+categories = ["compilers"]
+
+# The library is intentionally dependency-free: it uses only the standard
+# library so that embedders do not pull in a transitive tree, and so the
+# fuzzing build can vendor a minimal set of crates for the harness alone.
+[dependencies]
+
+[dev-dependencies]
+
+[lib]
+name = "tessera"
+path = "src/lib.rs"
+
+[[bin]]
+name = "tessera"
+path = "src/bin/tessera.rs"
+
+[profile.release]
+opt-level = 3
+debug = true
+overflow-checks = true
+panic = "abort"
+
+[profile.dev]
+overflow-checks = true

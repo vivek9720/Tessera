@@ -1,0 +1,50 @@
+# Fuzzing dictionary for the Tessera harnesses.
+# Module-format tokens (module_fuzzer) and surface-language tokens
+# (source_fuzzer) share one dictionary; unused entries are harmless.
+
+# --- Binary module format ---
+magic="TSRA"
+version="\x04\x00"
+
+# Constant tags
+const_int="\x00"
+const_float="\x01"
+const_str="\x02"
+const_bytes="\x03"
+
+# Upvalue descriptor tags
+upval_local="\x00"
+upval_parent="\x01"
+
+# A selection of opcode bytes
+op_loadconst="\x03"
+op_loadint="\x04"
+op_move="\x05"
+op_add="\x10"
+op_call="\x40"
+op_return="\x41"
+op_makelist="\x50"
+op_makemap="\x51"
+op_index="\x52"
+op_getupval="\x62"
+op_setupval="\x63"
+op_closure="\x64"
+op_halt="\x72"
+
+# --- Surface language ---
+kw_func="func"
+kw_let="let"
+kw_return="return"
+kw_if="if"
+kw_else="else"
+kw_while="while"
+kw_true="true"
+kw_false="false"
+kw_nil="nil"
+b_print="print"
+b_len="len"
+b_range="range"
+b_push="push"
+arrow="=>"
+concat="++"
+pow="**"

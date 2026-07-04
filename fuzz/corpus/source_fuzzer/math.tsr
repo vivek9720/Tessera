@@ -1,0 +1,8 @@
+func poly(x) { return 3 * x ** 2 - 2 * x + 1; }
+let acc = 0.0;
+let i = 0;
+while (i < 8) {
+  acc = acc + poly(float(i));
+  i = i + 1;
+}
+return clamp(acc, 0.0, 1000.0);

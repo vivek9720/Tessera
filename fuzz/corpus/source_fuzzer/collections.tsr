@@ -1,0 +1,10 @@
+let scores = {"ann": 3, "bob": 7, "cy": 5};
+let names = keys(scores);
+let total = 0;
+let i = 0;
+while (i < len(names)) {
+  total = total + scores[names[i]];
+  i = i + 1;
+}
+println("total", total);
+return total;

@@ -1,0 +1,10 @@
+func make_counter() {
+  let count = 0;
+  return func() {
+    count = count + 1;
+    return count;
+  };
+}
+let c = make_counter();
+c(); c(); c();
+return c();

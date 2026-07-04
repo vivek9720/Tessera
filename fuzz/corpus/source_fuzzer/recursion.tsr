@@ -1,0 +1,11 @@
+func fib(n) {
+  if (n < 2) { return n; }
+  return fib(n - 1) + fib(n - 2);
+}
+let out = [];
+let i = 0;
+while (i < 12) {
+  push(out, fib(i));
+  i = i + 1;
+}
+return out;

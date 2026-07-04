@@ -1,0 +1,8 @@
+func adder(n) {
+  return func(x) { return x + n; };
+}
+let add10 = adder(10);
+let add5 = adder(5);
+println(add10(1));
+println(add5(100));
+return add10(add5(0));
